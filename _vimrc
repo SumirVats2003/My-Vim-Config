@@ -39,9 +39,22 @@ function MyDiff()
   endif
 endfunction
 
-colors nightfly
+" colors nightfly
+colors cobalt
+" set guifont=source_code_pro:h14
 set guifont=courier_new:h14
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set nu
+set guioptions-=T
+
+set nobackup       
+set nowritebackup  
+set swapfile
+set dir=~/tmp
+set noundofile
+set autoindent
+set noerrorbells
+set ruler
+" highlight Normal gui='#002240'
