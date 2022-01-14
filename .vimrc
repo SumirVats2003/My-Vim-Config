@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'yunlingz/ci_dark'
 Plug 'luochen1990/rainbow'
@@ -34,11 +37,11 @@ let g:startify_bookmarks = [
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='behelit'
-colorscheme nightfly
+" colorscheme nightfly
 set tabstop=4
 set shiftwidth=4
 set nu rnu
-set cursorline
+" set cursorline
 set noerrorbells
 set clipboard=unnamed
 syntax on
@@ -55,6 +58,7 @@ augroup compileandrun
     autocmd filetype cpp nnoremap <c-z> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
     autocmd filetype c nnoremap <c-z> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
     autocmd filetype java nnoremap <c-z> :w <bar> !javac % && java %:r <cr>
+    autocmd filetype cpp nnoremap <c-b> i#include<iostream><cr>using namespace std;<cr><cr>int main() {<cr>return 0;<cr>}<esc>kO<esc>:w<cr>
 augroup END
 
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
